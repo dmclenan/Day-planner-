@@ -23,26 +23,16 @@ function updatedHour() {
 }
 updatedHour();
 // Saving descriptions to local storage 
-var userInput9 = localStorage.getItem('savebtn9') || ''
-document.getElementById("description9").value = userInput9
+var userInput = localStorage.getItem('savebtn9') || ''
+document.getElementById("description9").value = userInput
 // Creating a EventListener to save when clicked
 document.getElementById("savebtn9").addEventListener("click", function () {
     var userInput = document.getElementById("description9").value
     localStorage.setItem('savebtn9', userInput);
+
+    for (let i = 0; i < 9; i++) {
+        var userInput = document.querySelector("savebtn9" + (i + 1))
+        btn.addEventListener("click", function() {})
+      }
 });
 
-var userInput10 = localStorage.getItem('savebtn10') || ''
-document.getElementById("description10").value = userInput10
-// Creating a EventListener to save when clicked
-document.getElementById("savebtn10").addEventListener("click", function () {
-    var userInput = document.getElementById("description10").value
-    localStorage.setItem('savebtn10', userInput);
-});
-
-var userInput11 = localStorage.getItem('savebtn11') || ''
-document.getElementById("description10").value = userInput11
-// Creating a EventListener to save when clicked
-document.getElementById("savebtn11").addEventListener("click", function () {
-    var userInput = document.getElementById("description11").value
-    localStorage.setItem('savebtn11', userInput);
-});
