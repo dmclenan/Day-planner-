@@ -1,16 +1,10 @@
-// I want to have a daily date on the page
+// MY daily date on the page
 $("#currentDay").text(moment().format("MMM Do YY"));
 // I want the colors to change with the time
 var currentTime = parseInt(moment().format('HH'));
-console.log(currentTime);
-// I want to save to local storage
-// Alert message: "I just saved to local storage"
-
 // Compare current time to the time on the time block for each row
 const rowTime = document.getElementById("9");
-// Loop through each row get hour and determine if its 
-//in the past present future
-
+//Loop through each row get hour and determine the past,present,future//
 function updatedHour() {
     var currentHour = moment().hours()
     $(".time-block").each(function () {
@@ -25,25 +19,30 @@ function updatedHour() {
         if (timeBlock === currentTime) {
             $(this).addClass("present")
         }
-
-
-        //console.log( index + ": " + $( this ).text() );
-
-
     });
 }
 updatedHour();
+// Saving descriptions to local storage 
+var userInput9 = localStorage.getItem('savebtn9') || ''
+document.getElementById("description9").value = userInput9
+// Creating a EventListener to save when clicked
+document.getElementById("savebtn9").addEventListener("click", function () {
+    var userInput = document.getElementById("description9").value
+    localStorage.setItem('savebtn9', userInput);
+});
 
-/* var obj = {
-    arrayKey: [],
-    numKey: 5,
-    stringKey: "Hi",
-    objKey: {
-        nestedKey: "Hi"
-    },
-    funcKey: function Blah(){
-        console.log("Blah");
-    }
-}
+var userInput10 = localStorage.getItem('savebtn10') || ''
+document.getElementById("description10").value = userInput10
+// Creating a EventListener to save when clicked
+document.getElementById("savebtn10").addEventListener("click", function () {
+    var userInput = document.getElementById("description10").value
+    localStorage.setItem('savebtn10', userInput);
+});
 
-console.log(obj.funcKey); */
+var userInput11 = localStorage.getItem('savebtn11') || ''
+document.getElementById("description10").value = userInput11
+// Creating a EventListener to save when clicked
+document.getElementById("savebtn11").addEventListener("click", function () {
+    var userInput = document.getElementById("description11").value
+    localStorage.setItem('savebtn11', userInput);
+});
